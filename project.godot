@@ -10,11 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Capi"
+config/name="VoxCap"
+config/description="VoxCap is a fast-paced VR movement game with floating robot heads, modular antenna caps, and voice-driven facial expressions."
+config/tags=PackedStringArray("network", "vr", "xr")
 run/main_scene="uid://boewdfetyuvdm"
 config/features=PackedStringArray("4.4", "Mobile")
-boot_splash/image="uid://co4wufvyiq8fq"
-config/icon="uid://ca3stjn2puhhw"
+boot_splash/image="uid://bkdbmcntvp24u"
+config/icon="uid://cci2jcyl7f1uk"
+boot_splash/minimum_display_time=500
 
 [audio]
 
