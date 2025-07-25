@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://djcxbb38qa54d"]
+
+[ext_resource type="PackedScene" uid="uid://cxamdmfy511h8" path="res://prefabs/UIText.tscn" id="1_brjnw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ymcni"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_brjnw"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brjnw"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ymcni")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_brjnw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_n4sgc"]
+
+[node name="GUI" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_brjnw")
+mesh = SubResource("QuadMesh_n4sgc")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Control" parent="SubViewport" instance=ExtResource("1_brjnw")]

@@ -1,0 +1,80 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Capi"
+run/main_scene="uid://boewdfetyuvdm"
+config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/image="uid://co4wufvyiq8fq"
+config/icon="uid://ca3stjn2puhhw"
+
+[audio]
+
+driver/enable_input=true
+
+[autoload]
+
+XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
+
+[global_group]
+
+Player="Main Player Group"
+
+[input]
+
+ax_button={
+"deadzone": 0.2,
+"events": []
+}
+
+[layer_names]
+
+3d_physics/layer_1="Static World"
+3d_physics/layer_2="Dynamic World"
+3d_physics/layer_3="Pickable Objects"
+3d_physics/layer_4="Wall Walking Surface"
+3d_physics/layer_5="Grappling Target"
+3d_physics/layer_17="Held Objects"
+3d_physics/layer_18="Player Hand"
+3d_physics/layer_19="Grab handles"
+3d_physics/layer_20="Player Body"
+3d_physics/layer_21="Pointable"
+3d_physics/layer_22="Hand Pose Area"
+3d_physics/layer_23="UI Objects"
+
+[physics]
+
+common/physics_ticks_per_second=90
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+occlusion_culling/use_occlusion_culling=true
+
+[xr]
+
+openxr/enabled=true
+openxr/reference_space=2
+shaders/enabled=true

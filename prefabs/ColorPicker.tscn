@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcv5udwfyrlxn"]
+
+[ext_resource type="PackedScene" uid="uid://ytixg5brn0ig" path="res://prefabs/ColorPickerUI.tscn" id="1_nbnhw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nbnhw"]
+size = Vector2(1.778, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nbnhw"]
+viewport_path = NodePath("MeshInstance3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47mak"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_nbnhw")
+
+[node name="Customizer" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_nbnhw")
+surface_material_override/0 = SubResource("StandardMaterial3D_47mak")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D"]
+size = Vector2i(1280, 720)
+
+[node name="Control" parent="MeshInstance3D/SubViewport" instance=ExtResource("1_nbnhw")]

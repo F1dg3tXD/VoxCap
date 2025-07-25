@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b2yy8jnj5vcbk"]
+
+[ext_resource type="Shader" uid="uid://b2ln1u2r7hsw3" path="res://shaders/load_grid.gdshader" id="1_vg7ld"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vg7ld")
+shader_parameter/grid_color = Color(0.1, 0.8, 1, 1)
+shader_parameter/grid_spacing = 0.5
+shader_parameter/grid_thickness = 0.05
+shader_parameter/wave_speed = 1.0
+shader_parameter/wave_height = 0.2
+shader_parameter/wave_frequency = 1.0
+shader_parameter/emission_multiplier = 10.0
+shader_parameter/alpha_background = 0.0

@@ -1,0 +1,488 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bs4qh7w8odr4i"
+path="res://.godot/imported/The_Entire_GTAG_Map.glb-47eb520f3f79c05887d5bdbd6e2d42b5.scn"
+
+[deps]
+
+source_file="res://map/The_Entire_GTAG_Map.glb"
+dest_files=["res://.godot/imported/The_Entire_GTAG_Map.glb-47eb520f3f79c05887d5bdbd6e2d42b5.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Blue Ice": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Blue Ice.tres"
+},
+"Canyon Wall": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Canyon Wall.tres"
+},
+"Cosmetics Room Textures": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Cosmetics Room Textures.tres"
+},
+"Crystal Texture": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Crystal Texture.tres"
+},
+"Dark Brown Panel": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Dark Brown Panel.tres"
+},
+"Empty River Bed": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Empty River Bed.tres"
+},
+"Empty River Bed Wall": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Empty River Bed Wall.tres"
+},
+"Ice": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Ice.tres"
+},
+"Leaves": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Leaves.tres"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Material.tres"
+},
+"Mines Wall": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Mines Wall.tres"
+},
+"Mirror": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Mirror.tres"
+},
+"MirrorCenter.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/MirrorCenter.001.tres"
+},
+"PitGround During Winter": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/PitGround During Winter.tres"
+},
+"Red Planks": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Red Planks.tres"
+},
+"Tree Inside": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Tree Inside.tres"
+},
+"Tree bark": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/Tree bark.tres"
+},
+"bark": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/bark.tres"
+},
+"blackpaint": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/blackpaint.tres"
+},
+"blackpaint.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/blackpaint.001.tres"
+},
+"blackpaint.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/blackpaint.002.tres"
+},
+"blackpaint.003": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/blackpaint.003.tres"
+},
+"blackpaint.004": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/blackpaint.004.tres"
+},
+"block": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/block.tres"
+},
+"bush2": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/bush2.tres"
+},
+"cable": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cable.tres"
+},
+"cactus": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cactus.tres"
+},
+"canyon1": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/canyon1.tres"
+},
+"canyon2": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/canyon2.tres"
+},
+"canyon3": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/canyon3.tres"
+},
+"canyon5": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/canyon5.tres"
+},
+"carttexture.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/carttexture.001.tres"
+},
+"caverock": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/caverock.tres"
+},
+"caverockarrow1": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/caverockarrow1.tres"
+},
+"caverockarrow2": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/caverockarrow2.tres"
+},
+"cavewall1.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cavewall1.001.tres"
+},
+"clay": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/clay.tres"
+},
+"cosmeticsroomatlas": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cosmeticsroomatlas.tres"
+},
+"cosmeticsroomatlas.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cosmeticsroomatlas.002.tres"
+},
+"cosmeticsroomatlas.003": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cosmeticsroomatlas.003.tres"
+},
+"cosmeticsroomatlas.004": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cosmeticsroomatlas.004.tres"
+},
+"cosmeticsroomatlas.005": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cosmeticsroomatlas.005.tres"
+},
+"cosmeticsroomatlas.006": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cosmeticsroomatlas.006.tres"
+},
+"cosmeticsroomatlas.007": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/cosmeticsroomatlas.007.tres"
+},
+"crackedcement": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/crackedcement.tres"
+},
+"crate.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/crate.001.tres"
+},
+"darkbrownpanel": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/darkbrownpanel.tres"
+},
+"darkbrownpanel.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/darkbrownpanel.002.tres"
+},
+"hatlas.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/hatlas.001.tres"
+},
+"headmodel": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/headmodel.tres"
+},
+"headmodel.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/headmodel.002.tres"
+},
+"headmodel_0.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/headmodel_0.002.tres"
+},
+"headmodel_1": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/headmodel_1.tres"
+},
+"headmodel_1.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/headmodel_1.002.tres"
+},
+"loglowres.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/loglowres.002.tres"
+},
+"logsupport": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/logsupport.tres"
+},
+"logsupport.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/logsupport.001.tres"
+},
+"logsupport.003": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/logsupport.003.tres"
+},
+"metalbare": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/metalbare.tres"
+},
+"metalbare_1.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/metalbare_1.001.tres"
+},
+"metalpattern": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/metalpattern.tres"
+},
+"mountainbackground": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/mountainbackground.tres"
+},
+"neonblue": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonblue.tres"
+},
+"neonblue.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonblue.001.tres"
+},
+"neonblue.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonblue.002.tres"
+},
+"neongreen": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neongreen.tres"
+},
+"neongreen.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neongreen.001.tres"
+},
+"neonpurple": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonpurple.tres"
+},
+"neonpurple.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonpurple.001.tres"
+},
+"neonpurpledim": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonpurpledim.tres"
+},
+"neonpurpledim.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonpurpledim.001.tres"
+},
+"neonred": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonred.tres"
+},
+"neonwhite": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonwhite.tres"
+},
+"neonyellow": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonyellow.tres"
+},
+"neonyellow.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/neonyellow.001.tres"
+},
+"picnictable": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/picnictable.tres"
+},
+"pillowblue": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pillowblue.tres"
+},
+"pillowpink": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pillowpink.tres"
+},
+"pillowwhite": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pillowwhite.tres"
+},
+"pillowyellow": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pillowyellow.tres"
+},
+"pinetreebranchsmall": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pinetreebranchsmall.tres"
+},
+"pitground": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pitground.tres"
+},
+"pitgroundwinter": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pitgroundwinter.tres"
+},
+"pitwall": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pitwall.tres"
+},
+"pitwall.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/pitwall.001.tres"
+},
+"plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/plastic.tres"
+},
+"plastic.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/plastic.001.tres"
+},
+"plastic.003": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/plastic.003.tres"
+},
+"plastic.004": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/plastic.004.tres"
+},
+"plastic_001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/plastic_001.tres"
+},
+"purpleplastic": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/purpleplastic.tres"
+},
+"rockwall2": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/rockwall2.tres"
+},
+"rusty": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/rusty.tres"
+},
+"rusty.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/rusty.002.tres"
+},
+"rusty.003": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/rusty.003.tres"
+},
+"screen": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/screen.tres"
+},
+"screen.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/screen.001.tres"
+},
+"screen.003": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/screen.003.tres"
+},
+"screenblue": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/screenblue.tres"
+},
+"screenblue.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/screenblue.001.tres"
+},
+"shelfwood": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/shelfwood.tres"
+},
+"shelfwood.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/shelfwood.001.tres"
+},
+"structureroof": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/structureroof.tres"
+},
+"tableclay": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/tableclay.tres"
+},
+"tr": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/tr.tres"
+},
+"treeroomatlas": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/treeroomatlas.tres"
+},
+"treeroomatlas.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/treeroomatlas.001.tres"
+},
+"treeroomatlas.003": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/treeroomatlas.003.tres"
+},
+"window": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/window.tres"
+},
+"window.001": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/window.001.tres"
+},
+"woodensupport": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/woodensupport.tres"
+},
+"woodensupport.002": {
+"use_external/enabled": true,
+"use_external/path": "res://map/mat/woodensupport.002.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

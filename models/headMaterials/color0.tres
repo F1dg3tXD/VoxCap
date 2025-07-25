@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhtytguawvori"]
+
+[resource]
+resource_name = "color0"
+depth_draw_mode = 1
+albedo_color = Color(0.906738, 0.217692, 0.239617, 1)
+roughness = 0.5

@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://ytixg5brn0ig"]
+
+[ext_resource type="Script" uid="uid://cwa2hwmaec075" path="res://scripts/color_picker_ui.gd" id="1_s8eo5"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.71
+offset_bottom = -0.200073
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s8eo5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 390
+
+[node name="Color0" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Control/HBoxContainer/Color0"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 95.0
+offset_right = 233.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 66
+text = "0"
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/Color0"]
+layout_mode = 2
+offset_right = 245.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 72
+text = "Color 0"
+
+[node name="Color1" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Control/HBoxContainer/Color1"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 95.0
+offset_right = 233.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 66
+text = "0"
+color = Color(1, 1, 1, 1)
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/Color1"]
+layout_mode = 2
+offset_right = 245.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 72
+text = "Color 1"
+
+[node name="Color3" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Control/HBoxContainer/Color3"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 95.0
+offset_right = 233.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 66
+text = "0"
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/Color3"]
+layout_mode = 2
+offset_right = 245.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 72
+text = "Color 3"

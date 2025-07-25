@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://dabo21l2cst13"]
+
+[ext_resource type="Script" uid="uid://b41axmisn0wwt" path="res://editor/scripts/advanced_staging.gd" id="1_ower6"]
+[ext_resource type="Shader" uid="uid://dugqy824t0pkd" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="2_1lbjl"]
+[ext_resource type="PackedScene" uid="uid://bqumugyvkct4r" path="res://addons/godot-xr-tools/staging/loading_screen.tscn" id="3_p1o2u"]
+[ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="6_0d42o"]
+
+[sub_resource type="QuadMesh" id="4"]
+custom_aabb = AABB(-5000, -5000, -5000, 10000, 10000, 10000)
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_snlak"]
+render_priority = 0
+shader = ExtResource("2_1lbjl")
+shader_parameter/alpha = 0.0
+
+[sub_resource type="Sky" id="1"]
+
+[sub_resource type="Environment" id="2"]
+background_mode = 1
+sky = SubResource("1")
+
+[node name="Staging" type="Node3D"]
+script = ExtResource("1_ower6")
+
+[node name="Fade" type="MeshInstance3D" parent="."]
+mesh = SubResource("4")
+surface_material_override/0 = SubResource("ShaderMaterial_snlak")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("2")
+
+[node name="LoadingScreen" parent="." instance=ExtResource("3_p1o2u")]
+progress = 0.0
+
+[node name="Scene" type="Node3D" parent="."]
+
+[node name="player" parent="." instance=ExtResource("6_0d42o")]
+
+[editable path="player"]
+[editable path="player/XRCamera3D/playerHead"]

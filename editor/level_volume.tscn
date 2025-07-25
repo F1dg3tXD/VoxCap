@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://n752ak3y8fwq"]
+
+[ext_resource type="Script" uid="uid://cg2a407o3ldsk" path="res://editor/scripts/level_volume.gd" id="1_8hkb4"]
+
+[node name="level_volume" type="Node3D"]
+script = ExtResource("1_8hkb4")
+trigger_mode = 1
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 524288

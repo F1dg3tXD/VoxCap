@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c436sq1wme8tc"]
+
+[ext_resource type="Script" uid="uid://chhn44bfjmriu" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_kkj87"]
+[ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_yk06a"]
+
+[node name="LevelBase" type="Node3D"]
+script = ExtResource("1_kkj87")
+
+[node name="player" parent="." instance=ExtResource("2_yk06a")]

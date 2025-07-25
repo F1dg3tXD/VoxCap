@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0s7hk6rtlfkw"]
+
+[ext_resource type="PackedScene" uid="uid://c0q6hlnn7ohra" path="res://models/player_start.glb" id="1_1u380"]
+[ext_resource type="Script" uid="uid://botbincjdy4ri" path="res://editor/scripts/player_start.gd" id="1_l1q1j"]
+[ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_iv68q"]
+
+[node name="player_start" type="Node3D"]
+script = ExtResource("1_l1q1j")
+player_scene = ExtResource("2_iv68q")
+
+[node name="debug" type="Node3D" parent="."]
+
+[node name="player_start" parent="debug" instance=ExtResource("1_1u380")]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjjlp6ns4fywc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3fs6y"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jx2ox"]
+viewport_path = NodePath("Node3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcr3j"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_jx2ox")
+
+[node name="Mirror" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.40266, 0, 0, 0, 0.783286, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_3fs6y")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_hcr3j")
+
+[node name="SubViewport" type="SubViewport" parent="Node3D"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/SubViewport"]
+transform = Transform3D(1, 0, -1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, -0.706636)
+fov = 90.0

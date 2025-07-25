@@ -1,0 +1,19 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl8bmgvh0u1xg"]
+
+[ext_resource type="PackedScene" uid="uid://4v16raqocung" path="res://models/playerHead.glb" id="1_koshv"]
+[ext_resource type="Material" uid="uid://bhtytguawvori" path="res://models/headMaterials/color0.tres" id="2_ej4w1"]
+[ext_resource type="Material" uid="uid://dyjtm1oxrwrug" path="res://models/headMaterials/color1.tres" id="3_0n5uh"]
+[ext_resource type="Material" uid="uid://ccyrfwfqw30xm" path="res://models/headMaterials/color2.tres" id="4_53ny3"]
+[ext_resource type="Material" uid="uid://cokmdjhb4rfnv" path="res://models/headMaterials/color3.tres" id="5_ox5he"]
+[ext_resource type="Material" uid="uid://b6o57pkgijlm2" path="res://models/headMaterials/eye.tres" id="6_m3t65"]
+[ext_resource type="Material" uid="uid://wika3q48ofp2" path="res://models/headMaterials/CosmeticPlugs.tres" id="7_cax2y"]
+
+[node name="playerHead" instance=ExtResource("1_koshv")]
+
+[node name="headGodot" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ej4w1")
+surface_material_override/1 = ExtResource("3_0n5uh")
+surface_material_override/2 = ExtResource("4_53ny3")
+surface_material_override/3 = ExtResource("5_ox5he")
+surface_material_override/4 = ExtResource("6_m3t65")
+surface_material_override/5 = ExtResource("7_cax2y")
