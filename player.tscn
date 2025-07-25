@@ -1,7 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqswlbg8wquus"]
+[gd_scene load_steps=20 format=3 uid="uid://bqswlbg8wquus"]
 
+[ext_resource type="Script" uid="uid://bwutu4lsnf4xc" path="res://scripts/spectator_camera.gd" id="1_606se"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="1_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bl8bmgvh0u1xg" path="res://models/player_head.tscn" id="1_urp6f"]
+[ext_resource type="Script" uid="uid://hqfsjvifiyum" path="res://scripts/object_toggle.gd" id="2_bwjto"]
 [ext_resource type="PackedScene" uid="uid://dgncgj4b56r52" path="res://xr_tools_hand_pusher.tscn" id="2_sweqy"]
 [ext_resource type="Script" uid="uid://886tqcntjdwt" path="res://addons/godot-xr-tools/functions/movement_direct.gd" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="3_2hs0m"]
@@ -67,53 +69,78 @@ properties/10/path = NodePath("RightHandController:pose")
 properties/10/spawn = true
 properties/10/replication_mode = 1
 
-[node name="player" type="XROrigin3D" groups=["Player"]]
+[node name="player" type="Node3D"]
 
-[node name="XRCamera3D" type="XRCamera3D" parent="."]
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1280, 720)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+script = ExtResource("1_606se")
+target_path = NodePath("../player/XRCamera3D/playerHead")
+
+[node name="player" type="XROrigin3D" parent="SubViewport" groups=["Player"]]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="SubViewport/player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 near = 0.1
 
-[node name="SpotLight3D" type="SpotLight3D" parent="XRCamera3D"]
-
-[node name="playerHead" parent="XRCamera3D" instance=ExtResource("1_urp6f")]
+[node name="playerHead" parent="SubViewport/player/XRCamera3D" instance=ExtResource("1_urp6f")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="VoiceOutput" type="AudioStreamPlayer3D" parent="XRCamera3D"]
+[node name="VoiceOutput" type="AudioStreamPlayer3D" parent="SubViewport/player/XRCamera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0129349, 0)
 stream = SubResource("AudioStreamMicrophone_urp6f")
 autoplay = true
 bus = &"VOIP"
 
-[node name="LeftHandController" type="XRController3D" parent="."]
+[node name="FlashLight" type="Node3D" parent="SubViewport/player/XRCamera3D"]
+visible = false
+script = ExtResource("2_bwjto")
+target_node_path = NodePath("LightContainer")
+trigger_mode = 1
+input_action = "ax_button"
+
+[node name="LightContainer" type="Node3D" parent="SubViewport/player/XRCamera3D/FlashLight"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewport/player/XRCamera3D/FlashLight/LightContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0748407, 0.0101136, -0.0732188)
+light_energy = 5.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewport/player/XRCamera3D/FlashLight/LightContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 0.00999999, -0.0732188)
+light_energy = 5.0
+
+[node name="LeftHandController" type="XRController3D" parent="SubViewport/player"]
 tracker = &"left_hand"
 pose = &"grip"
 
-[node name="XRToolsHandPusher" parent="LeftHandController" instance=ExtResource("2_sweqy")]
+[node name="XRToolsHandPusher" parent="SubViewport/player/LeftHandController" instance=ExtResource("2_sweqy")]
 
-[node name="Area3D" type="Area3D" parent="LeftHandController/XRToolsHandPusher"]
+[node name="Area3D" type="Area3D" parent="SubViewport/player/LeftHandController/XRToolsHandPusher"]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="LeftHandController/XRToolsHandPusher/Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewport/player/LeftHandController/XRToolsHandPusher/Area3D"]
 shape = SubResource("SphereShape3D_b26j0")
 
-[node name="XRToolsMovementDirect" type="Node" parent="LeftHandController" groups=["movement_providers"]]
+[node name="XRToolsMovementDirect" type="Node" parent="SubViewport/player/LeftHandController" groups=["movement_providers"]]
 script = ExtResource("3_1jxqw")
 strafe = true
 metadata/_custom_type_script = "uid://886tqcntjdwt"
 
-[node name="XRToolsMovementSprint" type="Node" parent="LeftHandController" groups=["movement_providers"]]
+[node name="XRToolsMovementSprint" type="Node" parent="SubViewport/player/LeftHandController" groups=["movement_providers"]]
 script = ExtResource("4_dw050")
 sprint_type = 1
 metadata/_custom_type_script = "uid://bmqg2mi4r0njd"
 
-[node name="XRToolsMovementTurn" type="Node" parent="LeftHandController" groups=["movement_providers"]]
+[node name="XRToolsMovementTurn" type="Node" parent="SubViewport/player/LeftHandController" groups=["movement_providers"]]
 script = ExtResource("4_b26j0")
 turn_mode = 2
 metadata/_custom_type_script = "uid://b07jouvba3mmc"
 
-[node name="LeftHand" parent="LeftHandController" instance=ExtResource("5_nvl01")]
+[node name="LeftHand" parent="SubViewport/player/LeftHandController" instance=ExtResource("5_nvl01")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
-[node name="FunctionPointer" parent="LeftHandController" instance=ExtResource("7_bwjto")]
+[node name="FunctionPointer" parent="SubViewport/player/LeftHandController" instance=ExtResource("7_bwjto")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 show_laser = 2
 laser_length = 1
@@ -121,29 +148,29 @@ show_target = true
 distance = 5.0
 collision_mask = 5242880
 
-[node name="RightHandController" type="XRController3D" parent="."]
+[node name="RightHandController" type="XRController3D" parent="SubViewport/player"]
 tracker = &"right_hand"
 pose = &"grip"
 
-[node name="MovementTurn" parent="RightHandController" instance=ExtResource("1_hqtel")]
+[node name="MovementTurn" parent="SubViewport/player/RightHandController" instance=ExtResource("1_hqtel")]
 
-[node name="XRToolsHandPusher" parent="RightHandController" instance=ExtResource("2_sweqy")]
+[node name="XRToolsHandPusher" parent="SubViewport/player/RightHandController" instance=ExtResource("2_sweqy")]
 
-[node name="Area3D" type="Area3D" parent="RightHandController/XRToolsHandPusher"]
+[node name="Area3D" type="Area3D" parent="SubViewport/player/RightHandController/XRToolsHandPusher"]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RightHandController/XRToolsHandPusher/Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewport/player/RightHandController/XRToolsHandPusher/Area3D"]
 shape = SubResource("SphereShape3D_b26j0")
 
-[node name="XRToolsMovementCrouch" type="Node" parent="RightHandController" groups=["movement_providers"]]
+[node name="XRToolsMovementCrouch" type="Node" parent="SubViewport/player/RightHandController" groups=["movement_providers"]]
 script = ExtResource("3_sweqy")
 crouch_height = 0.8
 crouch_type = 1
 metadata/_custom_type_script = "uid://bnwr2qks6focx"
 
-[node name="RightHand" parent="RightHandController" instance=ExtResource("9_ivps1")]
+[node name="RightHand" parent="SubViewport/player/RightHandController" instance=ExtResource("9_ivps1")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
-[node name="FunctionPointer" parent="RightHandController" instance=ExtResource("7_bwjto")]
+[node name="FunctionPointer" parent="SubViewport/player/RightHandController" instance=ExtResource("7_bwjto")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 show_laser = 2
 laser_length = 1
@@ -151,16 +178,16 @@ show_target = true
 distance = 5.0
 collision_mask = 5242880
 
-[node name="PlayerBody" parent="." instance=ExtResource("3_2hs0m")]
+[node name="PlayerBody" parent="SubViewport/player" instance=ExtResource("3_2hs0m")]
 platform_floor_layers = 4279173131
 player_radius = 0.1
 physics = SubResource("Resource_n7ghd")
 
-[node name="XRToolsMovementHandWalk" parent="." instance=ExtResource("4_1jxqw")]
+[node name="XRToolsMovementHandWalk" parent="SubViewport/player" instance=ExtResource("4_1jxqw")]
 grav = 7.0
 velocity_averages = 8
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="SubViewport/player"]
 replication_config = SubResource("SceneReplicationConfig_urp6f")
 
-[editable path="XRCamera3D/playerHead"]
+[editable path="SubViewport/player/XRCamera3D/playerHead"]

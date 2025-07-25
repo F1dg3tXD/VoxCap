@@ -46,4 +46,4 @@ physics_rate_multiplier = 1
 [connection signal="xr_started" from="StartXR" to="." method="_on_StartXR_xr_started"]
 
 [editable path="player"]
-[editable path="player/XRCamera3D/playerHead"]
+[editable path="player/SubViewport/player/XRCamera3D/playerHead"]
